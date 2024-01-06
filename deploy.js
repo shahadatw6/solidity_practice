@@ -6,15 +6,12 @@ async function main() {
     "http://172.27.48.1:7545"
   );
   const wallet = new ethers.Wallet(
-    "0x764cd1830efb5b32ab3e8c19cfe219fbfe95f7873c122b0b77ea258d18b0de68",
+    "745bd615dde05b77b1bc2beb5e769145e6771644ae83e310658fff7ec292f469",
     provider
   );
 
-  const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
-  const binary = fs.readFileSync(
-    "./SimpleStorage_sol_SimpleStorage.bin",
-    "utf8"
-  );
+  const abi = fs.readFileSync("./ss_sol_SimpleStorage.abi", "utf8");
+  const binary = fs.readFileSync("./ss_sol_SimpleStorage.bin", "utf8");
 
   const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
   console.log("Deploying, please wait...");
